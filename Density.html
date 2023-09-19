@@ -5,14 +5,19 @@
         <title>Joseph Parrett</title> 
         <script>
             function calcDensity() {
-                    //input
-                var mass = document.getElementByID("textboxMass").value;
-                var volume = document.getElementById("textboxVolume").value;
-                    //processing
-                var density = mass / volume;
-                    //output
-                document.getElementById("densityOut").innerHTML = "The density is kilograms per cubic meter.";
+                var mass = parseFloat(document.getElementById("textboxMass").value);
+                var volume = parseFloat(document.getElementById("textboxVolume").value);
+                    
+                if (isNaN(mass) || isNaN(volume)) {
+                    alert("Please enter valid numbers for both mass and volume.");
+                    return;
                 }
+                    
+                var density = mass / volume;
+                var resultText = "The calculated density is " + density + " which is " + mass + " kilograms per " + volume + " per cubic meter.";
+                    
+                document.getElementById("densityOut").textContent = resultText;
+            }
         </script>
     </head>
 	<body>
@@ -26,7 +31,7 @@
         <button type="button" onclick="calcDensity()">Calculate</button>
        
         <!-- Output-->
-        <p id="densityOut">test</p>
+        <p id="densityOut">&nbsp;</p>
 
 	</body>	
 </html>
