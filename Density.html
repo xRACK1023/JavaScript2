@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>  
+        <title>Joseph Parrett</title> 
+        <script>
+            function calcDensity() {
+                    //input
+                var mass = document.getElementByID("textboxMass").value;
+                var volume = document.getElementById("textboxVolume").value;
+                    //processing
+                var density = mass / volume;
+                    //output
+                document.getElementById("densityOut").innerHTML = "The density is kilograms per cubic meter.";
+                }
+        </script>
+    </head>
+	<body>
+        <h1>josephParrett</h1>
+
+        <!-- Input-->
+        <p><input id="textboxMass" type="text" size="8"> Mass (kilograms)</p>
+        <p><input id="textboxVolume" type="text" size="8"> Volume (cubic meters)</p>
+
+        <!--Processing-->
+        <button type="button" onclick="calcDensity()">Calculate</button>
+       
+        <!-- Output-->
+        <p id="densityOut">test</p>
+
+	</body>	
+</html>
